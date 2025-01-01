@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./jquery-3.6.0.min.js"></script>
+    <!-- JqueryTouchSwipe-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <!-- JqueryLeaflet MAP-->
+    <script src="./Leaflet/leaflet.js"></script>
+
+
+    <link rel="stylesheet" href="./Leaflet/leaflet.css" />
+
+
+    <!--  IMPORT A-FRAME-->
+    <script src="./aframe.min.js"></script>
+
+    <!--  IMPORT AR.JS GEOLOCATION-->
+    <script type='text/javascript' src='./ar-threex-location-only.js'></script>
+
+    <!--  IMPORT AFRAME-AR -->
+    <script type='text/javascript' src='./aframe-ar.js'></script>
+
+
+    <style>
+        #overlay{
+            position: absolute; top:0;left: 0;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            color: white;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+
+        #interface{
+            display: none;
+        }
+
+        #map{
+            background-color: rgb(50,50,50);
+            border-radius: 500px;
+            color: white;
+            width: 14vw; height: 14vw;
+            border: 2px solid white;
+            background-repeat: no-repeat;
+            object-fit: fill;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        #map img{
+            object-fit: cover;
+            width: 10vw; height: 10vw;
+            
+        }
+
+        .icon-text{
+            text-align: center;
+            font-family: sans-serif;
+            padding-top:10px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .bottomContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        .interface{
+            width: max-content;
+            position: absolute;
+            top:50%;left:50%;
+            transform: translate(-50%,-50%);
+            gap: 20px;
+            border-radius: 20px;
+            padding: 10PX;
+        }
+
+        #songIndicator{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 25px;
+        }
+        #dismiss{
+            text-decoration: underline;
+            font-size: 15px;
+        }
+
+        .interface button{
+            background-color: rgba(0,0,0,0);
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            border: 0px;
+            text-decoration: underline;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        #distanceIndicator{
+            text-align: center;
+            padding-bottom: 20px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        @keyframes pulse{
+            0%{opacity:0} 
+            20%{opacity: 1}
+            60%{opacity:1} 
+            80%{opacity: 0}
+            100%{opacity: 0}
+        }
+    </style>
+
+
+</head>
+<body>
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true' shadow = 'enabled:true; type: basic' id="a-scene">
+        <a-camera id="camera" gps-new-camera='gpsMinDistance: 2' look-controls mouse-cursor  shadow="near: 0.5; far: 50; cast-soft: true">
+            <!--<a-entity cursor="rayOrigin: mouse"></a-entity>-->
+        </a-camera>
+
+        <a-entity id="ambientSound" geometry="primitive: plane" material="color: blue"
+        sound="src: url(./src/sounds/Ask.mp3); autoplay: true; volume:0; loop:true; rolloffFactor:0"></a-entity>
+
+        <a-entity id="speaker" geometry="primitive: sphere" material="color: red" 
+        sound="src: url(./src/sounds/Ask.mp3); autoplay: true; volume:0;rolloffFactor:0"></a-entity>
+
+        <a-entity id="wind" geometry="primitive: cube" material="color: green" 
+        sound="src: url(./src/sounds/wind.mp3); autoplay: true; volume:1;rolloffFactor:0"></a-entity>
+
+    </a-scene>
+
+    <div id="overlay">
+
+
+        <div id="interface" class="interface">
+            <button id="again">Ascolta di nuovo</button>
+            <button id="next">Vai al prossimo</button>
+        </div>
+        
+        <div id="songIndicator"  class="interface">Segui il canto di libertà <br>
+            <div id="dismiss"> Ho capito</div>
+        </div>
+
+        <div class="bottomContainer">
+
+            <div id="distanceIndicator"></div>
+
+            <button id="map" onclick="window.location.href = 'map.html'">
+
+                <img src="./src/imgs/map-icon.svg" alt="">
+            </button>
+            <div class="icon-text">Vai alla Mappa</div>
+
+
+        </div>
+    </div>
+
+
+    <!--  IMPORT SCRIPT -->
+<script type='text/javascript' src='./script.js'></script>
+
+<script>
+
+setInterval(toBeRepeated,2000)
+
+</script>
+</body>
+</html>

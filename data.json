@@ -1,0 +1,116 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+  
+  
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.167835471576304, "latitude": 45.50489258595765}
+        },
+        "properties": {
+          "name": "Racconto di Livio Cerri",
+          "index": 0,
+          "audioSrc":"url(./src/sounds/livio.mp3)"
+        }
+      },
+  
+  
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.165559408874312, "latitude": 45.50556483039383}
+        },
+        "properties": {
+          "name": "Su Aurelio Bernuzzi",
+          "index": 1,
+          "audioSrc":"url(./src/sounds/aurelio.mp3) "
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.225033750451438, "latitude": 45.46200206190564}
+        },
+        "properties": {
+          "name": "Racconto di Livio Cerri",
+          "index": 2,
+          "audioSrc":"url(./src/sounds/livio.mp3) "
+        }
+      },
+  
+  
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.22499846675803, "latitude": 45.46069348472734}
+        },
+        "properties": {
+          "name": "Su Aurelio Bernuzzi",
+          "index": 3,
+          "audioSrc":"url(./src/sounds/aurelio.mp3)"
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.2252854, "latitude": 45.4615459}
+        },
+        "properties": {
+          "name": "Racconto di prova",
+          "index": 4,
+          "audioSrc":"url(./src/sounds/Panzer.mp3)"
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":7.732120481624092, "latitude": 45.83930174502136}
+        },
+        "properties": {
+          "name": "Racconto di Livio Cerri",
+          "index": 2,
+          "audioSrc":"url(./src/sounds/livio.mp3) "
+        }
+      },
+  
+  
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":7.732183691651384, "latitude": 45.83973815439028}
+        },
+        "properties": {
+          "name": "Su Aurelio Bernuzzi",
+          "index": 3,
+          "audioSrc":"url(./src/sounds/aurelio.mp3)"
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":7.732202016587193, "latitude": 45.84048127893861}
+        },
+        "properties": {
+          "name": "Racconto di prova",
+          "index": 4,
+          "audioSrc":"url(./src/sounds/Panzer.mp3)"
+        }
+      }
+  
+              
+    ]
+  }
+  
