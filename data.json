@@ -78,7 +78,7 @@
         },
         "properties": {
           "name": "Racconto di Livio Cerri",
-          "index": 2,
+          "index": 5,
           "audioSrc":"url(./src/sounds/livio.mp3) "
         }
       },
@@ -92,7 +92,7 @@
         },
         "properties": {
           "name": "Su Aurelio Bernuzzi",
-          "index": 3,
+          "index": 6,
           "audioSrc":"url(./src/sounds/aurelio.mp3)"
         }
       },
@@ -105,7 +105,20 @@
         },
         "properties": {
           "name": "Racconto di prova",
-          "index": 4,
+          "index": 7,
+          "audioSrc":"url(./src/sounds/Panzer.mp3)"
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":7.734855379608132, "latitude": 45.84766526294204}
+        },
+        "properties": {
+          "name": "Racconto di prova",
+          "index": 8,
           "audioSrc":"url(./src/sounds/Panzer.mp3)"
         }
       }

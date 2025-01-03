@@ -111,7 +111,7 @@ function playElement(feature){
     console.log(feature.properties.audioSrc)
 
     speaker.setAttribute("sound", "src", feature.properties.audioSrc);
-    speaker.setAttribute("sound", "volume", 1);
+    speaker.setAttribute("sound", "volume", 5);
 
     ambientSound.components.sound.pauseSound();
 
