@@ -44,7 +44,7 @@
             display: none;
         }
 
-        #map{
+        .button{
             background-color: rgb(50,50,50);
             border-radius: 500px;
             color: white;
@@ -54,13 +54,23 @@
             object-fit: fill;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: min-content;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            gap:10px;
+            width: 100%;
+            min-width: 40vw;
+            font-weight: bold;
+            font-size: 1rem;
             
         }
 
-        #map img{
+        .button img{
             object-fit: cover;
-            width: 10vw; height: 10vw;
+            width: 7.5vw; height: 7.5vw;
             
         }
 
@@ -73,10 +83,12 @@
         }
 
         .bottomContainer{
+            width: fit-content;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-bottom: 100px;
+            gap:10px
         }
 
         .interface{
@@ -135,11 +147,11 @@
 
         <!--PLACEHODLER geometry="primitive: plane" material="color: blue"-->
         <a-entity id="ambientSound" 
-        sound="src: url(./src/sounds/Ask.mp3); autoplay: true; volume:0; loop:true; rolloffFactor:0"></a-entity>
+        sound="src: url(./src/sounds/BELLA_CIAO.mp3); autoplay: true; volume:0; loop:true; rolloffFactor:0"></a-entity>
 
         <!--PLACEHOLDER geometry="primitive: sphere" material="color: red" -->
         <a-entity id="speaker" 
-        sound="src: url(./src/sounds/Ask.mp3); autoplay: true; volume:0;rolloffFactor:0"></a-entity>
+        sound="src: url(./src/sounds/BELLA_CIAO.mp3); autoplay: true; volume:0;rolloffFactor:0"></a-entity>
 
         <a-entity id="wind" geometry="primitive: cube" material="color: green" 
         sound="src: url(./src/sounds/wind.mp3); autoplay: true; volume:1;rolloffFactor:0"></a-entity>
@@ -153,6 +165,8 @@
             <button id="again">Ascolta di nuovo</button>
             <button id="next">Vai al prossimo</button>
         </div>
+
+        <div class=" interface" id="taleDescription"></div>
         
         <div id="songIndicator"  class="interface">Segui il canto di libertà <br>
             <div id="dismiss"> Ho capito</div>
@@ -162,11 +176,20 @@
 
             <div id="distanceIndicator"></div>
 
-            <button id="map" onclick="window.open('map.html', '_blank')">
+            <button id="map" class="button"onclick="window.open('map.html', '_blank')">
 
-                <img src="./src/imgs/map-icon.svg" alt="">
+                Mappa <img src="./src/imgs/map-icon.svg" alt="">
             </button>
-            <div class="icon-text">Vai alla Mappa</div>
+
+            <button id="map" class="button" onclick="window.open('map.html', '_blank')">
+
+                About the Project <img src="./src/imgs/info-icon.svg" alt="">
+            </button>
+
+            <button id="map" class="button" onclick="window.open('map.html', '_blank')">
+
+                TroubleShooting <img src="./src/imgs/setting-icon.svg" alt="">
+            </button>
 
 
         </div>

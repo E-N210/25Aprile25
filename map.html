@@ -65,7 +65,15 @@
                 console.log(i)
                 L.marker([pois.features[i].geometry.coordinates.latitude, 
                     pois.features[i].geometry.coordinates.longitude], {icon: customIcon}).addTo(map).bindPopup(
-                    pois.features[i].properties.name
+                    `
+                        <div>
+                            <h3>${pois.features[i].properties.name}</h3>
+                        <audio controls>
+                            <source src="${pois.features[i].properties.audioUrl}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+        </div>
+    `
                 )
             }
         })

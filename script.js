@@ -4,6 +4,7 @@ var soundIsPlaying = 0
 var showSongMessage = 0
 
 let distIndicator = document.getElementById("distanceIndicator")
+let taleDescription = document.getElementById("taleDescription")
 
 let songIndicator = document.getElementById("songIndicator")
 let dismiss = document.getElementById("dismiss")
@@ -99,6 +100,8 @@ function calculateDistance(coord1, coord2) {
 function playElement(feature){
 
     distIndicator.style.display = "none"
+    
+    taleDescription.innerHTML=feature.properties.description
 
     soundIsPlaying =1
     speaker.setAttribute('gps-new-entity-place',{
@@ -120,9 +123,13 @@ function playElement(feature){
 
     speaker.addEventListener("sound-ended",()=>{
 
+        taleDescription.innerHTML=" "
+
         var indexToRemove = feature.properties.index
 
         interface.style.display ="flex"
+
+        distIndicator.style.display = "none"
 
         let again= document.getElementById("again")
         let next= document.getElementById("next")
@@ -141,10 +148,13 @@ function playElement(feature){
 
 
             interface.style.display ="none"
+            
 
         } )
 
         again.addEventListener("click", ()=>{
+
+            taleDescription.innerHTML=feature.properties.description
 
             speaker.setAttribute("sound", "src", feature.properties.audioSrc);
             speaker.components.sound.playSound();
@@ -187,8 +197,9 @@ function updateContent(){
 
     
     var absDistance = Math.floor(minDistance)
-
-    distIndicator.innerHTML="Ti trovi a: "+absDistance+" metri<br> dal prossimo racconto"
+    if(soundIsPlaying==0){
+        distIndicator.innerHTML="Ti trovi a: "+absDistance+" metri<br> dal prossimo racconto"
+    }
 
     if(absDistance<71 && absDistance>10){
         

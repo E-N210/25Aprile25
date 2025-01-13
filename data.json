@@ -12,7 +12,10 @@
         "properties": {
           "name": "Racconto di Livio Cerri",
           "index": 0,
-          "audioSrc":"url(./src/sounds/livio.mp3)"
+          "audioSrc":"url(./src/sounds/livio.mp3)",
+          "audioUrl":"./src/sounds/livio.mp3",
+          "description":"Stai ascoltando la testimonizanza<br> di Livio Cerri"
+        
         }
       },
   
@@ -26,7 +29,9 @@
         "properties": {
           "name": "Su Aurelio Bernuzzi",
           "index": 1,
-          "audioSrc":"url(./src/sounds/aurelio.mp3) "
+          "audioSrc":"url(./src/sounds/aurelio.mp3) ",
+          "audioUrl":"./src/sounds/aurelio.mp3 ",
+          "description":"Stai ascoltando il racconto <br> di Aurelio Bernuzzi"
         }
       },
 
@@ -39,7 +44,10 @@
         "properties": {
           "name": "Racconto di Livio Cerri",
           "index": 2,
-          "audioSrc":"url(./src/sounds/livio.mp3) "
+          "audioSrc":"url(./src/sounds/livio.mp3) ",
+          "audioUrl":"./src/sounds/livio.mp3",
+          "description":"Stai ascoltando la testimonizanza<br> di Livio Cerri"
+        
         }
       },
   
@@ -53,7 +61,9 @@
         "properties": {
           "name": "Su Aurelio Bernuzzi",
           "index": 3,
-          "audioSrc":"url(./src/sounds/aurelio.mp3)"
+          "audioSrc":"url(./src/sounds/aurelio.mp3)",
+          "audioUrl":"./src/sounds/aurelio.mp3 ",
+          "description":"Stai ascoltando il racconto <br> di Aurelio Bernuzzi"
         }
       },
 
@@ -66,7 +76,9 @@
         "properties": {
           "name": "Racconto di prova",
           "index": 4,
-          "audioSrc":"url(./src/sounds/Panzer.mp3)"
+          "audioSrc":"url(./src/sounds/Panzer.mp3)",
+          "audioUrl":"./src/sounds/Panzer.mp3",
+          "description":"Stai ascoltando la Resa <br> di Pavia il 10 Settembre "
         }
       },
 
@@ -79,7 +91,9 @@
         "properties": {
           "name": "Racconto di Livio Cerri",
           "index": 5,
-          "audioSrc":"url(./src/sounds/livio.mp3) "
+          "audioSrc":"url(./src/sounds/livio.mp3) ",
+          "audioUrl":"./src/sounds/livio.mp3",
+          "description":"Stai ascoltando la testimonizanza<br> di Livio Cerri"
         }
       },
   
@@ -93,7 +107,9 @@
         "properties": {
           "name": "Su Aurelio Bernuzzi",
           "index": 6,
-          "audioSrc":"url(./src/sounds/aurelio.mp3)"
+          "audioSrc":"url(./src/sounds/aurelio.mp3)",
+          "audioUrl":"./src/sounds/aurelio.mp3 ",
+          "description":"Stai ascoltando il racconto <br> di Aurelio Bernuzzi"
         }
       },
 
@@ -106,7 +122,9 @@
         "properties": {
           "name": "Racconto di prova",
           "index": 7,
-          "audioSrc":"url(./src/sounds/Panzer.mp3)"
+          "audioSrc":"url(./src/sounds/Panzer.mp3)",
+          "audioUrl":"./src/sounds/Panzer.mp3",
+          "description":"Stai ascoltando la Resa <br> di Pavia il 10 Settembre "
         }
       },
 
@@ -119,7 +137,9 @@
         "properties": {
           "name": "Racconto di prova",
           "index": 8,
-          "audioSrc":"url(./src/sounds/Panzer.mp3)"
+          "audioSrc":"url(./src/sounds/Panzer.mp3)",
+          "audioUrl":"./src/sounds/Panzer.mp3",
+          "description":"Stai ascoltando la Resa <br> di Pavia il 10 Settembre "
         }
       }
   
