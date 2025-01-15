@@ -13,6 +13,7 @@
 
 
     <link rel="stylesheet" href="./Leaflet/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
 
 
     <!--  IMPORT A-FRAME-->
@@ -25,116 +26,6 @@
     <script type='text/javascript' src='./aframe-ar.js'></script>
 
 
-    <style>
-        #overlay{
-            position: absolute; top:0;left: 0;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            width: 100vw;
-            height: 100vh;
-            align-items: center;
-            color: white;
-            display: flex;
-            justify-content: flex-end;
-
-        }
-
-        #interface{
-            display: none;
-        }
-
-        .button{
-            background-color: rgb(50,50,50);
-            border-radius: 500px;
-            color: white;
-            width: 14vw; height: 14vw;
-            border: 2px solid white;
-            background-repeat: no-repeat;
-            object-fit: fill;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding-left: 20px;
-            padding-right: 20px;
-            height: min-content;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            gap:10px;
-            width: 100%;
-            min-width: 40vw;
-            font-weight: bold;
-            font-size: 1rem;
-            
-        }
-
-        .button img{
-            object-fit: cover;
-            width: 7.5vw; height: 7.5vw;
-            
-        }
-
-        .icon-text{
-            text-align: center;
-            font-family: sans-serif;
-            padding-top:10px;
-            font-weight: 600;
-            font-size: 15px;
-        }
-
-        .bottomContainer{
-            width: fit-content;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 100px;
-            gap:10px
-        }
-
-        .interface{
-            width: max-content;
-            position: absolute;
-            top:50%;left:50%;
-            transform: translate(-50%,-50%);
-            gap: 20px;
-            border-radius: 20px;
-            padding: 10PX;
-        }
-
-        #songIndicator{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 25px;
-        }
-        #dismiss{
-            text-decoration: underline;
-            font-size: 15px;
-        }
-
-        .interface button{
-            background-color: rgba(0,0,0,0);
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-            border: 0px;
-            text-decoration: underline;
-            font-size: 20px;
-            font-weight: 300;
-        }
-
-        #distanceIndicator{
-            text-align: center;
-            padding-bottom: 20px;
-            animation: pulse 2s infinite ease-in-out;
-        }
-        @keyframes pulse{
-            0%{opacity:0} 
-            20%{opacity: 1}
-            60%{opacity:1} 
-            80%{opacity: 0}
-            100%{opacity: 0}
-        }
-    </style>
 
 
 </head>
@@ -172,24 +63,33 @@
             <div id="dismiss"> Ho capito</div>
         </div>
 
+
+        <div id="distanceIndicator"></div>
+
+        <div class="top-right-Container">
+
+            <button id="about" class="button" onclick="window.open('about.html', '_blank')">
+
+                <img src="./src/imgs/info-icon.svg" alt="">
+             </button>
+
+            <button id="trouble" class="button" onclick="window.open('trouble.html', '_blank')">
+
+                <img src="./src/imgs/help-icon.svg" alt="">
+             </button>
+
+        </div>
+
         <div class="bottomContainer">
 
-            <div id="distanceIndicator"></div>
-
-            <button id="map" class="button"onclick="window.open('map.html', '_blank')">
-
-                Mappa <img src="./src/imgs/map-icon.svg" alt="">
-            </button>
 
             <button id="map" class="button" onclick="window.open('map.html', '_blank')">
-
-                About the Project <img src="./src/imgs/info-icon.svg" alt="">
+                <img src="./src/imgs/map-icon.svg" alt="">Mappa       
             </button>
 
-            <button id="map" class="button" onclick="window.open('map.html', '_blank')">
 
-                TroubleShooting <img src="./src/imgs/setting-icon.svg" alt="">
-            </button>
+
+    
 
 
         </div>
@@ -202,6 +102,18 @@
 <script>
 
 setInterval(toBeRepeated,2000)
+
+let myCamera = document.querySelector("[gps-new-camera]");
+
+myCamera.addEventListener('camera-init', () => {
+    console.log('AR.js camera initialized successfully!');
+});
+
+myCamera.addEventListener('camera-error', (error) => {
+    console.log('AR.js camera failed to initialize:', error.detail);
+    //alert(error)
+});
+
 
 </script>
 </body>
