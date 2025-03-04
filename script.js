@@ -13,6 +13,8 @@ let dismiss = document.getElementById("dismiss")
 let ambientSound = document.getElementById("ambientSound")
 let speaker = document.getElementById("speaker")
 
+let accuracyIndicator = document.getElementById("accuracyIndicator")
+
 
 let interface = document.getElementById("interface")
     if(interface!==null){interface.style.display ="none"}
@@ -62,12 +64,21 @@ function getGPSPosition() {
 
 
                 console.log("GPS was Accessed")
+                console.log(position.coords.accuracy)
+
+                if(position.coords.accuracy<20){
+                    accuracyIndicator.style.display="none"
+                } else{
+                    accuracyIndicator.style.display="flex"
+                }
             },
             error => {
                 console.error("Error getting location:", error);
                 reject(error);
             }
         );
+
+
         //updateContent()
     });
 }
@@ -98,7 +109,7 @@ function calculateDistance(coord1, coord2) {
 
 // TO BE USED IN updateContent() when element has to be rendered
 function playElement(feature){
-
+    songIndicator.style.display ="none"
     distIndicator.style.display = "none"
     
     taleDescription.innerHTML=feature.properties.description
@@ -133,6 +144,7 @@ function playElement(feature){
 
         let again= document.getElementById("again")
         let next= document.getElementById("next")
+        let close= document.getElementById("close")
 
         next.addEventListener("click", ()=>{
 
@@ -151,6 +163,23 @@ function playElement(feature){
             
 
         } )
+
+        close.addEventListener("click", ()=>{            
+            pois.features = pois.features.filter(feature => feature.properties.index !== indexToRemove)
+            console.log(pois.features)
+            soundIsPlaying=0
+            ambientSound.components.sound.playSound();
+
+            ambientSound.setAttribute("sound", "volume", 0);
+            
+            distances = distances.filter((_, index) => index !== indexToRemove)
+            minDistance = 100000000
+
+
+            interface.style.display ="none"
+
+        }
+        )
 
         again.addEventListener("click", ()=>{
 

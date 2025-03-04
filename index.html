@@ -51,10 +51,24 @@
 
     <div id="overlay">
 
+        <div class="button" style="width: max-content; height: min-content; text-align: center; display: flex; flex-direction: column;
+        padding-left: 20px; padding-right: 20px; position: absolute; top:2.5vh; font-family: sans-serif; gap:2px; padding-bottom: 10px; padding-top: 10px;" 
+        id="accuracyIndicator">
+            <p style="margin: 0px;">Your GPS position is inaccurate</p>
+            <p style="font-weight: 100; margin: 0px;">this might lead to misplaced directions</p></div>
 
-        <div id="interface" class="interface">
-            <button id="again">Ascolta di nuovo</button>
-            <button id="next">Vai al prossimo</button>
+
+        <div id="interface" class="button">
+            <div id="closeContainer" style="display: flex; flex-direction: row; width:100%; justify-content: flex-end;">
+
+              <img style="width: 3vw; height: 3vw;" id="close" src="./src/imgs/close.svg">
+  
+            </div>
+            <div style="display: flex;">
+                <div id="again">Ascolta di nuovo</div>
+                <div id="next">Vai al Prossimo</div>
+            </div>
+  
         </div>
 
         <div class=" interface" id="taleDescription"></div>
