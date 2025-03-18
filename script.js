@@ -228,45 +228,38 @@ function updateContent(){
     var absDistance = Math.floor(minDistance)
     if(soundIsPlaying==0){
         distIndicator.innerHTML="Ti trovi a: "+absDistance+" metri<br> dal prossimo racconto"
-    }
 
-    if(absDistance<71 && absDistance>10){
+
+        if(absDistance<71 && absDistance>10){
         
-        if(showSongMessage==0){
-            songIndicator.style.display ="flex"
-            showSongMessage = 1
+            if(showSongMessage==0){
+                songIndicator.style.display ="flex"
+                showSongMessage = 1
 
-            dismiss.addEventListener("click", ()=>{
+                dismiss.addEventListener("click", ()=>{
                 songIndicator.style.display ="none"
+                })
+            }
+
+            console.log(lat,lon)
+            ambientSound.setAttribute('gps-new-entity-place',{
+                latitude:lat, longitude:lon
             })
+
+            var myVolume= absDistance/70
+
+            ambientSound.components.sound.playSound();
+            ambientSound.setAttribute("sound", "volume", 1-myVolume);
+
+            console.log("new volume level:",ambientSound.components.sound.data)
+        }  else{
+            ambientSound.components.sound.pauseSound();
+            showSongMessage = 0
         }
 
-        console.log(lat,lon)
-        ambientSound.setAttribute('gps-new-entity-place',{
-            latitude:lat, longitude:lon
-        })
-
-        var myVolume= absDistance/70
-
-        //console.log("oldVolume", ambientSound.components.sound.data.volume)
-        //console.log("myVolume:", myVolume)
-        //ambientSound.components.sound.data.volume = 1-myVolume
-        //ambientSound.components.sound.data.volume = 1
-
-        ambientSound.components.sound.playSound();
-        ambientSound.setAttribute("sound", "volume", 1-myVolume);
-
-        console.log("new volume level:",ambientSound.components.sound.data)
-    } else{
-        ambientSound.components.sound.pauseSound();
-        showSongMessage = 0
     }
 
-    
-
-    console.log("UPDATE CONTENT WAS EXECUTED")
-
-    
+    console.log("UPDATE CONTENT WAS EXECUTED")    
 
 }
 

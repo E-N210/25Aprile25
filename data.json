@@ -7,7 +7,8 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
-          "coordinates": {"longitude":9.167835471576304, "latitude": 45.50489258595765}
+          "coordinates": {"longitude":8.848829204496038, "latitude": 45.31796606512312},
+          "location":"vigevano via mentana"
         },
         "properties": {
           "name": "Racconto di Livio Cerri",
@@ -24,7 +25,8 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
-          "coordinates": {"longitude":9.165559408874312, "latitude": 45.50556483039383}
+          "coordinates": {"longitude":8.850161797926482, "latitude": 45.31809989786112},
+          "location":"vigevano via mentana"
         },
         "properties": {
           "name": "Su Aurelio Bernuzzi",
@@ -39,12 +41,30 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
-          "coordinates": {"longitude":9.225033750451438, "latitude": 45.46200206190564}
+          "coordinates": {"longitude":8.849544711306878, "latitude": 45.318104292297626},
+          "location":"vigevano via mentana"
+        },
+        "properties": {
+          "name": "La resa di Pavia",
+          "index": 2,
+          "audioSrc":"url(./src/sounds/Panzer.mp3) ",
+          "audioUrl":"./src/sounds/Panzer.mp3",
+          "description":"Stai ascoltando <br> La resa di Pavia"
+        
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":8.841242230963694, "latitude": 45.326468365157425},
+          "location":"vigevano CSO NOVARA"
         },
         "properties": {
           "name": "Racconto di Livio Cerri",
-          "index": 2,
-          "audioSrc":"url(./src/sounds/livio.mp3) ",
+          "index": 0,
+          "audioSrc":"url(./src/sounds/livio.mp3)",
           "audioUrl":"./src/sounds/livio.mp3",
           "description":"Stai ascoltando la testimonizanza<br> di Livio Cerri"
         
@@ -56,12 +76,13 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
-          "coordinates": {"longitude":9.22499846675803, "latitude": 45.46069348472734}
+          "coordinates": {"longitude":8.841420059982163, "latitude": 45.32631958759768},
+          "location":"vigevano CSO NOVARA"
         },
         "properties": {
           "name": "Su Aurelio Bernuzzi",
-          "index": 3,
-          "audioSrc":"url(./src/sounds/aurelio.mp3)",
+          "index": 1,
+          "audioSrc":"url(./src/sounds/aurelio.mp3) ",
           "audioUrl":"./src/sounds/aurelio.mp3 ",
           "description":"Stai ascoltando il racconto <br> di Aurelio Bernuzzi"
         }
@@ -71,120 +92,16 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
-          "coordinates": {"longitude":9.2252854, "latitude": 45.4615459}
-        },
-        "properties": {
-          "name": "Racconto di prova",
-          "index": 4,
-          "audioSrc":"url(./src/sounds/Panzer.mp3)",
-          "audioUrl":"./src/sounds/Panzer.mp3",
-          "description":"Stai ascoltando la Resa <br> di Pavia il 10 Settembre "
-        }
-      },
-
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": {"longitude":7.732120481624092, "latitude": 45.83930174502136}
+          "coordinates": {"longitude":8.84161675240691, "latitude": 45.32612173537992},
+          "location":"vigevano CSO NOVARA"
         },
         "properties": {
           "name": "Racconto di Livio Cerri",
-          "index": 5,
-          "audioSrc":"url(./src/sounds/livio.mp3) ",
-          "audioUrl":"./src/sounds/livio.mp3",
-          "description":"Stai ascoltando la testimonizanza<br> di Livio Cerri"
-        }
-      },
-  
-  
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": {"longitude":7.732183691651384, "latitude": 45.83973815439028}
-        },
-        "properties": {
-          "name": "Su Aurelio Bernuzzi",
-          "index": 6,
-          "audioSrc":"url(./src/sounds/aurelio.mp3)",
-          "audioUrl":"./src/sounds/aurelio.mp3 ",
-          "description":"Stai ascoltando il racconto <br> di Aurelio Bernuzzi"
-        }
-      },
-
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": {"longitude":7.732202016587193, "latitude": 45.84048127893861}
-        },
-        "properties": {
-          "name": "Racconto di prova",
-          "index": 7,
-          "audioSrc":"url(./src/sounds/Panzer.mp3)",
+          "index": 2,
+          "audioSrc":"url(./src/sounds/Panzer.mp3) ",
           "audioUrl":"./src/sounds/Panzer.mp3",
-          "description":"Stai ascoltando la Resa <br> di Pavia il 10 Settembre "
-        }
-      },
-
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": {"longitude":9.153204626226294, "latitude": 45.18581904950864}
-        },
-        "properties": {
-          "name": "Su Aurelio Bernuzzi",
-          "index": 6,
-          "audioSrc":"url(./src/sounds/aurelio.mp3)",
-          "audioUrl":"./src/sounds/aurelio.mp3 ",
-          "description":"Stai ascoltando il racconto <br> di Aurelio Bernuzzi"
-        }
-      },
-
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": {"longitude":9.151868759302054, "latitude": 45.1861019605648}
-        },
-        "properties": {
-          "name": "Racconto di prova",
-          "index": 8,
-          "audioSrc":"url(./src/sounds/Panzer.mp3)",
-          "audioUrl":"./src/sounds/Panzer.mp3",
-          "description":"Stai ascoltando la Resa <br> di Pavia il 10 Settembre "
-        }
-      },
-
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": {"longitude":9.150830531329621, "latitude": 45.186339978509146}
-        },
-        "properties": {
-          "name": "Racconto di Livio Cerri",
-          "index": 5,
-          "audioSrc":"url(./src/sounds/livio.mp3) ",
-          "audioUrl":"./src/sounds/livio.mp3",
-          "description":"Stai ascoltando la testimonizanza<br> di Livio Cerri"
-        }
-      },
-
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": {"longitude":7.734855379608132, "latitude": 45.84766526294204}
-        },
-        "properties": {
-          "name": "Racconto di prova",
-          "index": 8,
-          "audioSrc":"url(./src/sounds/Panzer.mp3)",
-          "audioUrl":"./src/sounds/Panzer.mp3",
-          "description":"Stai ascoltando la Resa <br> di Pavia il 10 Settembre "
+          "description":"Stai ascoltando <br> La resa di Pavia"
+        
         }
       }
   
