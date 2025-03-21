@@ -102,18 +102,6 @@
 
 setInterval(toBeRepeated,2000)
 
-let myCamera = document.querySelector("[gps-new-camera]");
-
-myCamera.addEventListener('camera-init', () => {
-    console.log('AR.js camera initialized successfully!');
-});
-
-myCamera.addEventListener('camera-error', (error) => {
-    console.log('AR.js camera failed to initialize:', error.detail);
-    //alert(error)
-});
-
-
 </script>
 </body>
 </html>
