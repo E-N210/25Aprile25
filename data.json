@@ -92,6 +92,22 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
+          "coordinates": {"longitude":8.840877402455611, "latitude": 45.325948771713584},
+          "location":"vigevano CSO NOVARA"
+        },
+        "properties": {
+          "name": "Su Aurelio Bernuzzi",
+          "index": 1,
+          "audioSrc":"url(./src/sounds/aurelio.mp3) ",
+          "audioUrl":"./src/sounds/aurelio.mp3 ",
+          "description":"Stai ascoltando il racconto <br> di Aurelio Bernuzzi"
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
           "coordinates": {"longitude":8.84161675240691, "latitude": 45.32612173537992},
           "location":"vigevano CSO NOVARA"
         },

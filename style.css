@@ -4,16 +4,37 @@ body{
 h1{
     font-family: sans-serif;
     text-align: center;
-    padding-top: 10px; 
+    padding-top: 30px; 
     padding-left: 50px;
     padding-right: 50px;
     font-weight: bold;
     padding-bottom: 30px;
-    color: white;
-    background-color: lightslategrey;
+    color: #972747;
+    
     margin: 0;
 
 }
+
+h2{
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 10px; 
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: bold;
+    color: #972747;
+    
+    margin: 0;
+
+}
+
+audio::-webkit-media-controls-panel{
+}
+
+audio::-webkit-media-controls{
+    color: white;
+}
+
 #overlay{
     position: absolute; top:0;left: 0;
     z-index: 100;
@@ -43,6 +64,26 @@ h1{
 
 .button{
     background-color: rgb(50,50,50);
+    border-radius: 500px;
+    color: white;
+    width: 14vw; height: 14vw;
+    border: 0px solid white;
+    background-repeat: no-repeat;
+    object-fit: fill;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    gap:10px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    
+}
+.button1{
+    background-color: #972747;
     border-radius: 500px;
     color: white;
     width: 14vw; height: 14vw;

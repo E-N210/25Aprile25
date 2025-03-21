@@ -222,8 +222,6 @@ function updateContent(){
     console.log(distances)
 
     minDistance = Math.min(... distances)
-    console.log(minDistance+1000)
-
     
     var absDistance = Math.floor(minDistance)
     if(soundIsPlaying==0){
