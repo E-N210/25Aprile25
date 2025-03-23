@@ -92,8 +92,42 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
-          "coordinates": {"longitude":8.840877402455611, "latitude": 45.325948771713584},
+          "coordinates": {"longitude":8.84161675240691, "latitude": 45.32612173537992},
           "location":"vigevano CSO NOVARA"
+        },
+        "properties": {
+          "name": "Racconto di Livio Cerri",
+          "index": 2,
+          "audioSrc":"url(./src/sounds/Panzer.mp3) ",
+          "audioUrl":"./src/sounds/Panzer.mp3",
+          "description":"Stai ascoltando <br> La resa di Pavia"
+        
+        }
+      },
+
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.225268269696395, "latitude":45.461674846577765},
+          "location":"Mialno Via Longhi"
+        },
+        "properties": {
+          "name": "Su Aurelio Bernuzzi",
+          "index": 0,
+          "audioSrc":"url(./src/sounds/aurelio.mp3) ",
+          "audioUrl":"./src/sounds/aurelio.mp3 ",
+          "description":"Stai ascoltando il racconto <br> di Aurelio Bernuzzi"
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.225134898986664, "latitude": 45.46202538002634},
+          "location":"Mialno Via Longhi"
         },
         "properties": {
           "name": "Su Aurelio Bernuzzi",
@@ -108,8 +142,8 @@
         "type": "Feature",
         "geometry": {
           "type": "Point",
-          "coordinates": {"longitude":8.84161675240691, "latitude": 45.32612173537992},
-          "location":"vigevano CSO NOVARA"
+          "coordinates": {"longitude":9.225098259592425, "latitude": 45.46077694927979},
+          "location":"Mialno Via Longhi"
         },
         "properties": {
           "name": "Racconto di Livio Cerri",

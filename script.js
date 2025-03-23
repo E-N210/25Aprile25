@@ -6,6 +6,8 @@ var showSongMessage = 0
 let distIndicator = document.getElementById("distanceIndicator")
 let taleDescription = document.getElementById("taleDescription")
 
+taleDescription.style.display="none"
+
 let songIndicator = document.getElementById("songIndicator")
 let dismiss = document.getElementById("dismiss")
     if(songIndicator!==null){songIndicator.style.display ="none"}
@@ -111,6 +113,8 @@ function calculateDistance(coord1, coord2) {
 function playElement(feature){
     songIndicator.style.display ="none"
     distIndicator.style.display = "none"
+
+    taleDescription.style.display="flex"
     
     taleDescription.innerHTML=feature.properties.description
 
@@ -142,13 +146,18 @@ function playElement(feature){
 
         distIndicator.style.display = "none"
 
-        let again= document.getElementById("again")
+        taleDescription.style.display="none"
+
+        let again= document.getElementById("listenAgain")
         let next= document.getElementById("next")
         let close= document.getElementById("close")
 
         next.addEventListener("click", ()=>{
 
+            taleDescription.style.display="none"
+
             pois.features = pois.features.filter(feature => feature.properties.index !== indexToRemove)
+            
             console.log(pois.features)
             soundIsPlaying=0
             ambientSound.components.sound.playSound();
@@ -198,11 +207,7 @@ function playElement(feature){
 //TO BE USED ONLY IN INDEX
 function updateContent(){
     
-        // alert("GPS UPDATE POSITION WAS TRIGGERED")
     distIndicator.style.display ="flex"
-
-    //console.log("UPDATE CONTENT WAS STARTED")
-    //console.log(currentCoord)
 
 
     for(var i=0;i < pois.features.length;i++){
@@ -210,7 +215,7 @@ function updateContent(){
         distance = calculateDistance(currentCoord, pois.features[i].geometry.coordinates)
         distances[i] = distance
 
-        if(distance<10){
+        if(distance<20){
             console.log(pois.features[i].properties.name, "MUST BE PLAYED")
 
             //ambientSound.setAttribute("sound", "src", "url("+pois.features[i].properties.audioSrc+")");
@@ -224,11 +229,13 @@ function updateContent(){
     minDistance = Math.min(... distances)
     
     var absDistance = Math.floor(minDistance)
+
+    
     if(soundIsPlaying==0){
-        distIndicator.innerHTML="Ti trovi a: "+absDistance+" metri<br> dal prossimo racconto"
+        distIndicator.innerHTML="distanza dal prossimo racconto:<br> "+absDistance+" metri"
 
 
-        if(absDistance<71 && absDistance>10){
+        if(absDistance<71){
         
             if(showSongMessage==0){
                 songIndicator.style.display ="flex"

@@ -30,7 +30,7 @@
 
 </head>
 <body>
-    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true' shadow = 'enabled:true; type: basic' id="a-scene">
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: false; debugUIEnabled: false' renderer='antialias: true; alpha: true' shadow = 'enabled:true; type: basic' id="a-scene">
         <a-camera id="camera" gps-new-camera='gpsMinDistance: 2' look-controls mouse-cursor  shadow="near: 0.5; far: 50; cast-soft: true">
             <!--<a-entity cursor="rayOrigin: mouse"></a-entity>-->
         </a-camera>
@@ -51,34 +51,30 @@
 
     <div id="overlay">
 
-        <div class="button" style="width: max-content; height: min-content; text-align: center; display: flex; flex-direction: column;
-        padding-left: 20px; padding-right: 20px; position: absolute; top:2.5vh; font-family: sans-serif; gap:2px; padding-bottom: 10px; padding-top: 10px;" 
-        id="accuracyIndicator">
-            <p style="margin: 0px;">Your GPS position is inaccurate</p>
-            <p style="font-weight: 100; margin: 0px;">this might lead to misplaced directions</p></div>
 
 
-        <div id="interface" class="button">
-            <div id="closeContainer" style="display: flex; flex-direction: row; width:100%; justify-content: flex-end;">
+        <div id="interface"class="button2" style="width: max-content; height: max-content; text-align: center; display: flex; flex-direction: column;
+            font-family: sans-serif; margin-bottom:20px; padding-left:30px; padding-right: 30px; padding-bottom: 20px; padding-top: 40px;
+            position: absolute; top:50%;left:50%;transform: translate(-50%,-50%); border-radius: 20px;">
 
-              <img style="width: 3vw; height: 3vw;" id="close" src="./src/imgs/close.svg">
-  
-            </div>
-            <div style="display: flex;">
-                <div id="again">Ascolta di nuovo</div>
+                <div id="listenAgain">Ascolta di nuovo</div>
                 <div id="next">Vai al Prossimo</div>
-            </div>
   
         </div>
 
-        <div class=" interface" id="taleDescription"></div>
+        <div id="taleDescription" class="button2" style="width: max-content; height: max-content; text-align: center; display: flex; flex-direction: column;
+        font-family: sans-serif; margin-bottom:20px; padding-left:30px; padding-right: 30px; padding-bottom: 20px; padding-top:20px;
+        position: absolute; top:50%;left:50%;transform: translate(-50%,-50%);"></div>
         
         <div id="songIndicator"  class="interface">Segui il canto di libertà <br>
             <div id="dismiss"> Ho capito</div>
         </div>
 
 
-        <div id="distanceIndicator"></div>
+        <div id="distanceIndicator" class="button" style="width: max-content; height: min-content; text-align: center; display: flex; flex-direction: column;
+             font-family: sans-serif; margin-bottom:20px" 
+    
+        > distanza dal prossimo racconto :</div>
 
         <div class="top-right-Container">
 
@@ -92,14 +88,24 @@
                 <img src="./src/imgs/help-icon.svg" alt="">
              </button>
 
+
+            <button id="goToMap" class="button" onclick="window.open('map.html', '_blank')">
+
+                <img src="./src/imgs/map-icon.svg" alt="">
+             </button>
+
         </div>
 
         <div class="bottomContainer">
 
 
-            <button id="map" class="button" onclick="window.open('map.html', '_blank')">
-                <img src="./src/imgs/map-icon.svg" alt="">Mappa       
-            </button>
+        <div class="button" style="width: max-content; height: min-content; text-align: center; display: flex; flex-direction: column;
+        padding-left: 20px; padding-right: 20px; font-family: sans-serif; gap:2px; padding-bottom: 10px; padding-top: 10px;" 
+        id="accuracyIndicator">
+            <p style="margin: 0px;">Your GPS position is inaccurate</p>
+            <p style="font-weight: 100; margin: 0px;">this might lead to misplaced directions</p></div>
+
+
 
 
 
@@ -115,7 +121,7 @@
 
 <script>
 
-setInterval(toBeRepeated,2000)
+setInterval(toBeRepeated,500)
 
 let myCamera = document.querySelector("[gps-new-camera]");
 
