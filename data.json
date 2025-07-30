@@ -114,12 +114,12 @@
           "location":"Mialno Via Longhi"
         },
         "properties": {
-          "name": "Su Aurelio Bernuzzi",
+          "name": "Livio Cerri",
           "index": 0,
-          "audioSrc":"url(./src/sounds/aurelio.mp3) ",
-          "audioUrl":"./src/sounds/aurelio.mp3 ",
-          "description":"Stai ascoltando il racconto <br> di Aurelio Bernuzzi"
-        }
+          "audioSrc":"url(./src/sounds/livio.mp3) ",
+          "audioUrl":"./src/sounds/livio.mp3 ",
+          "description":"Stai ascoltando la testimonizanza<br> di Livio Cerri"
+         }
       },
 
       {
@@ -146,14 +146,67 @@
           "location":"Mialno Via Longhi"
         },
         "properties": {
-          "name": "Racconto di Livio Cerri",
+          "name": "La resa di Pavia",
           "index": 2,
           "audioSrc":"url(./src/sounds/Panzer.mp3) ",
           "audioUrl":"./src/sounds/Panzer.mp3",
           "description":"Stai ascoltando <br> La resa di Pavia"
         
         }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.15189318166227, "latitude": 45.186088839138925},
+          "location":"Pavia Politeama"
+        },
+        "properties": {
+          "name": "L'impresa del Politeama'",
+          "index": 3,
+          "audioSrc":"url(./src/sounds/Politeama.mp3) ",
+          "audioUrl":"./src/sounds/Politeama.mp3",
+          "description":"Stai ascoltando <br> L'impresa del Politeama'"
+        
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.155829006261943, "latitude": 45.18675849849877},
+          "location":"Pavia Università"
+        },
+        "properties": {
+          "name": "La bandiera rossa",
+          "index": 4,
+          "audioSrc":"url(./src/sounds/università.mp3) ",
+          "audioUrl":"./src/sounds/università.mp3",
+          "description":"Stai ascoltando <br> La Bandiera dell'Università"
+        
+        }
+      },
+
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": {"longitude":9.162731661918802, "latitude":45.185514792716155},
+          "location":"Mialno Via Longhi"
+        },
+        "properties": {
+          "name": "L'Istituto Botanico'",
+          "index": 2,
+          "audioSrc":"url(./src/sounds/IstitutoBotanico.mp3) ",
+          "audioUrl":"./src/sounds/IstitutoBotanico.mp3",
+          "description":"Stai ascoltando <br> La resistenza all'Istituto Botanico"
+        
+        }
       }
+
+
   
               
     ]

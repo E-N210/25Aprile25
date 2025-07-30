@@ -6,6 +6,8 @@ var showSongMessage = 0
 let distIndicator = document.getElementById("distanceIndicator")
 let taleDescription = document.getElementById("taleDescription")
 
+taleDescription.style.display="none"
+
 let songIndicator = document.getElementById("songIndicator")
 let dismiss = document.getElementById("dismiss")
     if(songIndicator!==null){songIndicator.style.display ="none"}
@@ -19,6 +21,18 @@ let accuracyIndicator = document.getElementById("accuracyIndicator")
 let interface = document.getElementById("interface")
     if(interface!==null){interface.style.display ="none"}
 
+
+let again= document.getElementById("again")
+let next= document.getElementById("next")
+
+let mute = document.getElementById("mute")
+let unmute = document.getElementById("unMute")
+
+var isMute=0
+var myVolume=0
+
+let spinner = document.getElementById("spinner")
+
 var currentCoord={"latitude":0,"longitude":0}
 let minDistance = 0
 var lat=0
@@ -29,8 +43,11 @@ const camera = document.querySelector("[gps-new-camera]");
 let pois= null
 var showMessage = 0
 
+speaker.pause()
+ambientSound.pause()
 
 async function getData(){
+    
     const data =  await fetch('./data.json');
     console.log("data are loaded");
     
@@ -111,28 +128,25 @@ function calculateDistance(coord1, coord2) {
 function playElement(feature){
     songIndicator.style.display ="none"
     distIndicator.style.display = "none"
+    spinner.style.display="none"
+
+    taleDescription.style.display="flex"
+
     
     taleDescription.innerHTML=feature.properties.description
 
     soundIsPlaying =1
-    speaker.setAttribute('gps-new-entity-place',{
-        latitude:lat, longitude:lon
-    })
 
-    speaker.setAttribute("sound",{
-        src:feature.properties.audioSrc
-    })
-    console.log(feature.properties.audioSrc)
 
-    speaker.setAttribute("sound", "src", feature.properties.audioSrc);
-    speaker.setAttribute("sound", "volume", 5);
+    speaker.src= feature.properties.audioUrl
+    speaker.play()
 
-    ambientSound.components.sound.pauseSound();
+    ambientSound.pause();
 
     //playedSounds.push(feature.properties.index)
     //console.log(playedSounds)
 
-    speaker.addEventListener("sound-ended",()=>{
+    speaker.onended = function(){
 
         taleDescription.innerHTML=" "
 
@@ -142,55 +156,44 @@ function playElement(feature){
 
         distIndicator.style.display = "none"
 
-        let again= document.getElementById("again")
-        let next= document.getElementById("next")
-        let close= document.getElementById("close")
+        taleDescription.style.display="none"
+
 
         next.addEventListener("click", ()=>{
 
+            taleDescription.style.display="none"
+
             pois.features = pois.features.filter(feature => feature.properties.index !== indexToRemove)
+            
             console.log(pois.features)
             soundIsPlaying=0
-            ambientSound.components.sound.playSound();
-
-            ambientSound.setAttribute("sound", "volume", 0);
             
             distances = distances.filter((_, index) => index !== indexToRemove)
             minDistance = 100000000
 
+            showSongMessage=0
+
 
             interface.style.display ="none"
+
+            spinner.style.display="block"
             
 
         } )
 
-        close.addEventListener("click", ()=>{            
-            pois.features = pois.features.filter(feature => feature.properties.index !== indexToRemove)
-            console.log(pois.features)
-            soundIsPlaying=0
-            ambientSound.components.sound.playSound();
-
-            ambientSound.setAttribute("sound", "volume", 0);
-            
-            distances = distances.filter((_, index) => index !== indexToRemove)
-            minDistance = 100000000
-
-
-            interface.style.display ="none"
-
-        }
-        )
 
         again.addEventListener("click", ()=>{
 
+
+            taleDescription.style.display="flex"
+
             taleDescription.innerHTML=feature.properties.description
 
-            speaker.setAttribute("sound", "src", feature.properties.audioSrc);
-            speaker.components.sound.playSound();
+            speaker.play();
             interface.style.display ="none"
         } )
 
-    })
+    }
 
 }
 
@@ -198,11 +201,7 @@ function playElement(feature){
 //TO BE USED ONLY IN INDEX
 function updateContent(){
     
-        // alert("GPS UPDATE POSITION WAS TRIGGERED")
     distIndicator.style.display ="flex"
-
-    //console.log("UPDATE CONTENT WAS STARTED")
-    //console.log(currentCoord)
 
 
     for(var i=0;i < pois.features.length;i++){
@@ -210,10 +209,9 @@ function updateContent(){
         distance = calculateDistance(currentCoord, pois.features[i].geometry.coordinates)
         distances[i] = distance
 
-        if(distance<10){
+        if(distance<20){
             console.log(pois.features[i].properties.name, "MUST BE PLAYED")
 
-            //ambientSound.setAttribute("sound", "src", "url("+pois.features[i].properties.audioSrc+")");
             playElement(pois.features[i])
         }
     }
@@ -222,53 +220,99 @@ function updateContent(){
     console.log(distances)
 
     minDistance = Math.min(... distances)
-    console.log(minDistance+1000)
-
     
     var absDistance = Math.floor(minDistance)
+    var distanceToBeDisplayed = absDistance-20
+
+    
     if(soundIsPlaying==0){
-        distIndicator.innerHTML="Ti trovi a: "+absDistance+" metri<br> dal prossimo racconto"
-    }
+        distIndicator.innerHTML="distanza dal prossimo racconto:<br> "+distanceToBeDisplayed+" metri"
 
-    if(absDistance<71 && absDistance>10){
         
-        if(showSongMessage==0){
-            songIndicator.style.display ="flex"
-            showSongMessage = 1
+        if(absDistance<101){
+        
+            if(showSongMessage==0){
+                songIndicator.style.display ="flex"
 
-            dismiss.addEventListener("click", ()=>{
+                spinner.style.display="none"
+                showSongMessage = 1
+
+                dismiss.addEventListener("click", ()=>{
                 songIndicator.style.display ="none"
-            })
+
+                spinner.style.display="block"
+                })
+            }
+
+            console.log(lat,lon)
+          
+
+            ambientSound.play();
+            if(absDistance<30 && isMute==0){
+                myVolume=1
+                ambientSound.volume = myVolume
+            }
+            else if(absDistance<40 && isMute==0){
+                myVolume= 0.8;
+                ambientSound.volume = myVolume
+            }
+            else if(absDistance<50 && isMute==0){
+                myVolume= 0.6;
+                ambientSound.volume = myVolume
+            }
+
+            else if(absDistance<60 && isMute==0){
+                myVolume= 0.4;
+                ambientSound.volume = myVolume
+            }
+
+            else if(absDistance<70 && isMute==0){
+                myVolume= 0.2;
+                ambientSound.volume = myVolume
+            }
+
+            else if(absDistance<80 && isMute==0){
+                myVolume= 0.1;
+                ambientSound.volume = myVolume
+            }
+
+            else if(absDistance<90 && isMute==0){
+                myVolume= 0.05;
+                ambientSound.volume = myVolume
+            }
+
+            ambientSound.play();
+            console.log(ambientSound.volume)
+
+            //console.log("new volume level:",ambientSound.components.sound.data)
+        }  else{
+            ambientSound.pause();
+            showSongMessage = 0
         }
-
-        console.log(lat,lon)
-        ambientSound.setAttribute('gps-new-entity-place',{
-            latitude:lat, longitude:lon
-        })
-
-        var myVolume= absDistance/70
-
-        //console.log("oldVolume", ambientSound.components.sound.data.volume)
-        //console.log("myVolume:", myVolume)
-        //ambientSound.components.sound.data.volume = 1-myVolume
-        //ambientSound.components.sound.data.volume = 1
-
-        ambientSound.components.sound.playSound();
-        ambientSound.setAttribute("sound", "volume", 1-myVolume);
-
-        console.log("new volume level:",ambientSound.components.sound.data)
-    } else{
-        ambientSound.components.sound.pauseSound();
-        showSongMessage = 0
     }
-
-    
-
-    console.log("UPDATE CONTENT WAS EXECUTED")
-
-    
-
 }
+
+    console.log("UPDATE CONTENT WAS EXECUTED")    
+
+mute.addEventListener("click", ()=>{
+    speaker.volume=0
+    ambientSound.volume=0
+    unmute.style.display="flex"
+    mute.style.display="none"
+
+    isMute=1
+})
+
+unmute.addEventListener("click", ()=>{
+    speaker.volume=1
+    ambientSound.volume=myVolume
+    unmute.style.display="none"
+    mute.style.display="flex"
+
+    console.log(myVolume)
+
+    isMute=0
+})
 
 function toBeRepeated(){
     if(soundIsPlaying==0){

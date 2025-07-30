@@ -50,7 +50,7 @@ audio::-webkit-media-controls{
 }
 
 .button{
-    background-color: rgb(50,50,50);
+    background-color: #972747;
     border-radius: 500px;
     color: white;
     width: 14vw; height: 14vw;
@@ -71,7 +71,7 @@ audio::-webkit-media-controls{
 }
 
 .button2{
-    background-color: rgb(50,50,50);
+    background-color: #972747;
     border-radius: 500px;
     color: white;
     width: 14vw; height: 14vw;
@@ -101,11 +101,11 @@ audio::-webkit-media-controls{
     object-fit: fill;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
-    gap:10px;
+    gap:30px;
     width: 100%;
     font-weight: bold;
     font-size: 1rem;
@@ -122,7 +122,7 @@ audio::-webkit-media-controls{
 
     padding-top: 10px;
     padding-bottom: 10px;
-    gap:5px
+    gap:20px
 }
 
 #map img{
@@ -165,6 +165,10 @@ audio::-webkit-media-controls{
     flex-direction: column;
     align-items: center;
     font-size: 25px;
+    color:#972747;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
 }
 #dismiss{
     text-decoration: underline;
@@ -185,6 +189,7 @@ audio::-webkit-media-controls{
     text-align: center;
     padding: 20px;
     animation: pulse 2s infinite ease-in-out;
+    color: #972747; font-weight: bold;
 }
 
 .top-right-Container{
@@ -205,4 +210,57 @@ audio::-webkit-media-controls{
     60%{opacity:1} 
     80%{opacity: 0}
     100%{opacity: 0}
+}
+
+
+#mainCircle{
+
+    position: absolute;
+    top:50%; left:50%; transform: translate(-50%,-50%);
+    width:160px; height:160px;
+    border-radius: 300px;
+    background-color: #972747;
+}
+
+
+#extCircle1{
+
+    position: absolute;
+    top:50%; left:50%; transform: translate(-50%,-50%);
+    width:200px; height:200px;
+    border-radius: 300px;
+    border: 8px solid #972747;
+    opacity: 0.8;
+
+    animation: scale 1s infinite
+}
+
+#extCircle2{
+
+    position: absolute;
+    top:50%; left:50%; transform: translate(-50%,-50%);
+    width:240px; height:240px;
+    border-radius: 300px;
+    border: 8px solid #972747;
+    opacity: 0.6;
+
+    animation: scale 1s infinite
+}
+
+#extCircle3{
+
+    position: absolute;
+    top:50%; left:50%; transform: translate(-50%,-50%);
+    width:280px; height:280px;
+    border-radius: 300px;
+    border: 8px solid #972747;
+    transform-origin: 50%,50%;
+    opacity: 0.4;
+
+    animation: scale 1s infinite
+}
+
+@keyframes scale {
+    from{transform: translate(-50%,-50%) scale(0) ;}
+    to{transform: translate(-50%,-50%) scale(1);}
 }
